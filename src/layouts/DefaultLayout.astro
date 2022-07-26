@@ -1,0 +1,26 @@
+---
+import Nav from '../components/Nav.astro'
+
+interface Props {
+    title?: string
+}
+
+const {title = 'Home'} = Astro.props as Props
+---
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width" />
+		<title>{title} | Surge Energy</title>
+		<meta name="description" content="A newer Supplier Nomination Form powered by AstroJS and Surge Energy!" />
+	</head>
+	<body>
+		<div class="w-full h-screen overflow-hidden">
+			<Nav />
+			<main class="w-full h-full overflow-hidden flex flex-row justify-center items-center">
+				<slot />
+			</main>
+		</div>
+	</body>
+</html>
