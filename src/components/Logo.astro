@@ -11,12 +11,14 @@ const {width = "92", height = "92", format="webp"} = Astro.props as Props
 ---
 
 <div>
-    <Picture
-        src="/src/assets/logo.png"
-        alt="Surge Energy Company Logo"
-        width={width}
-        height={height}
-        loading="eager"
-        placeholder="none"
-    />
+    <a href="/">
+        <Picture
+            src="/src/assets/logo.png"
+            alt="Surge Energy Company Logo"
+            width={width}
+            height={height}
+            loading="eager"
+            placeholder="none"
+        />
+    </a>
 </div>

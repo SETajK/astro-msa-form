@@ -1,12 +1,32 @@
 ---
 import Nav from '../components/Nav.astro'
+import styles from '../sass/modules/_exports.module.scss'
+import '../sass/main.scss'
 
 interface Props {
     title?: string
+	subheading?: string
 }
 
-const {title = 'Home'} = Astro.props as Props
+const panelColor = styles.panelBackground
+const shadowColor = styles.surgeBlue
+const backgroundColor = styles.bodyBackground
+const {title = 'Home', subheading = 'Supplier Nomination Form'} = Astro.props as Props
 ---
+
+<style lang="scss" define:vars={{ shadowColor, 'panel-background': panelColor, backgroundColor  }}>
+	main {
+		background-color: var(--backgroundColor);
+	}
+
+	#form__wrapper {
+		background-color: var(--panel-background);
+
+		--tw-shadow-color: var(--shadowColor); 
+		--tw-shadow: var(--tw-shadow-colored);
+		transition: box-shadow 0.3s ease-in-out;
+	}
+</style>
 
 <html lang="en">
 	<head>
@@ -17,9 +37,11 @@ const {title = 'Home'} = Astro.props as Props
 	</head>
 	<body>
 		<div class="w-full h-screen overflow-hidden">
-			<Nav />
+			<Nav subheading={subheading} />
 			<main class="w-full h-full overflow-hidden flex flex-row justify-center items-center">
-				<slot />
+				<div id="form__wrapper" class="border-hover flex flex-col justify-center items-center h-2/3 w-11/12 md:w-2/3 rounded-3xl mb-24 hover:shadow-2xl border border-black md:hover:border-opacity-100 md:border-opacity-0 text-black text-center">
+					<slot />
+				</div>
 			</main>
 		</div>
 	</body>

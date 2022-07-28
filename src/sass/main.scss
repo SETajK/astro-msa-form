@@ -1,0 +1,9 @@
+@use 'globals/fonts' as fonts;
+
+#form__wrapper {
+    font-family: fonts.$title-font;
+}
+
+.home-cta {
+    font-family: fonts.$body-font;
+}

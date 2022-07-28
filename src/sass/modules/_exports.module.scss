@@ -1,0 +1,6 @@
+@use '../globals/variables' as *;
+:export {
+    @each $key, $value in $theme-vars {
+        #{unquote($key)}: $value;
+    }
+}

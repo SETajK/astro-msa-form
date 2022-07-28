@@ -1,12 +1,26 @@
 ---
 import Logo from "./Logo.astro";
 import NavTitle from "./NavTitle.astro";
+import styles from '../sass/modules/_exports.module.scss'
+
+interface Props {
+    subheading?: string
+}
+
+const { subheading = 'Supplier Nomination Form' } = Astro.props as Props
+const backgroundColor = styles.surgeBlue
 ---
 
-<nav style="background-color: hsla(226, 68%, 50%, 82%);">
+<style define:vars={{ backgroundColor }}>
+    nav {
+        background-color: var(--backgroundColor);
+    }
+</style>
+
+<nav>
     <div class="navbar flex flex-row text-white text-justify justify-between py-3">
             <Logo />
-            <NavTitle />
+            <NavTitle subheading={subheading}/>
             <Logo />
     </div>
 </nav>

@@ -11,5 +11,8 @@ export default defineConfig({
         build: {
             emptyOutDir: true,
         },
+        server: {
+            open: true,
+        },
     },
 });
