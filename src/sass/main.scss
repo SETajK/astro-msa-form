@@ -1,9 +1,13 @@
 @use 'globals/fonts' as fonts;
 
-#form__wrapper {
+.title-font {
     font-family: fonts.$title-font;
 }
 
-.home-cta {
+.body-font {
     font-family: fonts.$body-font;
+}
+
+.subheading-font {
+    font-family: fonts.$subheading-font;
 }
