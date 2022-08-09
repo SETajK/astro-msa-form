@@ -28,6 +28,8 @@ const {title = 'Home', subheading = 'Supplier Nomination Form'} = Astro.props as
 	}
 </style>
 
+
+<!DOCTYPE html>
 <html lang="en">
 	<head>
 		<meta charset="utf-8" />
@@ -38,15 +40,8 @@ const {title = 'Home', subheading = 'Supplier Nomination Form'} = Astro.props as
 	<body>
 		<div class="w-full h-screen overflow-hidden">
 			<Nav subheading={subheading} />
-
-
-
-
 			<main class="w-full h-full overflow-hidden flex flex-row justify-center items-center">
 				<div id="form__wrapper" class="flex flex-col justify-center items-center h-3/4 w-11/12 md:w-2/3 rounded-3xl mb-24 hover:shadow-2xl border border-black md:border-opacity-0 md:hover:border-opacity-100 text-black text-center">
-
-
-
 					<slot />
 				</div>
 			</main>

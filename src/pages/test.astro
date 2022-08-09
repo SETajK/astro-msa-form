@@ -1,0 +1,38 @@
+---
+import '../assets/dual-listbox.css'
+---
+
+<select class="demo" multiple>
+    <option value="1">One</option>
+    <option value="2">Two</option>
+    <option value="3">Three</option>
+    <option value="4">Four</option>
+    <option value="5">Five</option>
+    <option value="6">Six</option>
+    <option value="7">Seven</option>
+    <option value="8">Eight</option>
+    <option value="9">Nine</option>
+    <option value="10">Ten</option>
+</select>
+
+<script>
+    listbox = new DualListbox('.demo',{
+        addEvent: function(value) {
+            console.log(value);
+        },
+        removeEvent: function(value) {
+            console.log(value);
+        },
+        availableTitle: 'Different title',
+        selectedTitle: 'Different title',
+        addButtonText: '>',
+        removeButtonText: '<', addAllButtonText: '>>',
+        removeAllButtonText: '<<',
+        options: [
+            {text:"Option 1", value: "OPTION1"},
+            {text:"Option 2", value: "OPTION2"},
+            {text:"Selected option", value: "OPTION3", selected:true}
+        ]
+        });
+</script>
+<script src="/dual-listbox.js" is:inline></script>
