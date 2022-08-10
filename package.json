@@ -6,19 +6,27 @@
         "dev": "astro dev",
         "start": "astro dev",
         "build": "astro build",
-        "preview": "astro preview"
+        "preview": "astro preview",
+        "prettier": "prettier --write --plugin-search-dir=. ."
     },
     "devDependencies": {
         "@astrojs/svelte": "^0.5.1",
         "@astrojs/tailwind": "^0.2.5",
         "@astrojs/turbolinks": "^0.1.4",
-        "astro": "^1.0.0",
+        "@astrojs/vue": "^1.0.0",
+        "astro": "^1.0.1",
         "astro-imagetools": "^0.6.10",
         "autoprefixer": "^10.4.8",
         "daisyui": "^2.22.0",
         "postcss": "^8.4.16",
-        "sass": "^1.54.3",
+        "prettier": "^2.7.1",
+        "prettier-plugin-astro": "^0.5.0",
+        "sass": "^1.54.4",
         "svelte": "^3.49.0",
-        "typescript": "^4.7.4"
+        "typescript": "^4.7.4",
+        "vue": "^3.2.37"
+    },
+    "dependencies": {
+        "vue-multiselect": "3.0.0-alpha.2"
     }
 }

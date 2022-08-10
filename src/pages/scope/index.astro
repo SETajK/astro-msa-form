@@ -1,9 +1,14 @@
 ---
 import DefaultLayout from "../../layouts/DefaultLayout.astro";
 import FormPlugin from "../../layouts/FormPluginLayout.astro";
-import CategorySelect from "../../components/CategorySelect.astro";
+import PrimaryCategory from '../../components/PrimaryCategoryDropdown.vue'
+import SecondaryCategory from '../../components/SecondaryCategoryDropdown.vue'
+import Multiselect from "../../components/multiselect.vue";
+import RiskLevel from '../../components/RiskLevelDropdown.vue'
+import styles from "../../sass/modules/_exports.module.scss";
 
-const title = "Scope Information"
+const title = "Scope Information";
+const surgeBlue = styles.surgeBlue
 ---
 
 <DefaultLayout title={title} subheading={title}>
@@ -11,8 +16,15 @@ const title = "Scope Information"
 
     <div class="grid grid-cols-2 w-full">
         <div class="flex flex-col gap-2 items-center">
-            <CategorySelect title="Primary Category"/>
-            <CategorySelect title="Secondary Category"/>
+            <PrimaryCategory class="w-80" id="primary-category" client:load />
+            <SecondaryCategory class="w-80" id="secondary-category" client:load />
+            <div class="w-80">
+                <label class="text-xs">Attributes</label>
+                <Multiselect color={surgeBlue} client:load />
+            </div>
+            <div class="w-80">
+                <RiskLevel client:load />
+            </div>
         </div>
         <div>
             <div class="flex flex-col justify-center pb-4">
@@ -20,11 +32,21 @@ const title = "Scope Information"
                 <div class="flex justify-center gap-x-6">
                     <div class="flex align-middle gap-2">
                         <label for="input1">One-Time</label>
-                        <input id="input1" type="radio" name="radio-0" class="radio radio-accent" />
+                        <input
+                            id="input1"
+                            type="radio"
+                            name="radio-0"
+                            class="radio radio-accent"
+                        />
                     </div>
                     <div class="flex align-middle gap-2">
                         <label for="input2">Reoccuring</label>
-                        <input id="input2" type="radio" name="radio-0" class="radio radio-accent" />
+                        <input
+                            id="input2"
+                            type="radio"
+                            name="radio-0"
+                            class="radio radio-accent"
+                        />
                     </div>
                 </div>
             </div>
@@ -34,15 +56,30 @@ const title = "Scope Information"
                 <div class="flex justify-center gap-x-6">
                     <div class="flex align-middle gap-2">
                         <label for="input3">Moss Creek</label>
-                        <input id="input3" type="radio" name="radio-1" class="radio radio-accent" />
+                        <input
+                            id="input3"
+                            type="radio"
+                            name="radio-1"
+                            class="radio radio-accent"
+                        />
                     </div>
                     <div class="flex align-middle gap-2">
                         <label for="input4">Hoople</label>
-                        <input id="input4" type="radio" name="radio-1" class="radio radio-accent" />
+                        <input
+                            id="input4"
+                            type="radio"
+                            name="radio-1"
+                            class="radio radio-accent"
+                        />
                     </div>
                     <div class="flex align-middle gap-2">
                         <label for="input5">Houston</label>
-                        <input id="input5" type="radio" name="radio-1" class="radio radio-accent" />
+                        <input
+                            id="input5"
+                            type="radio"
+                            name="radio-1"
+                            class="radio radio-accent"
+                        />
                     </div>
                 </div>
             </div>
@@ -52,11 +89,21 @@ const title = "Scope Information"
                 <div class="flex justify-center gap-x-6">
                     <div class="flex align-middle gap-2">
                         <label for="input6">Yes</label>
-                        <input id="input6" type="radio" name="radio-2" class="radio radio-accent" />
+                        <input
+                            id="input6"
+                            type="radio"
+                            name="radio-2"
+                            class="radio radio-accent"
+                        />
                     </div>
                     <div class="flex align-middle gap-2">
                         <label for="input7">No</label>
-                        <input id="input7" type="radio" name="radio-2" class="radio radio-accent" />
+                        <input
+                            id="input7"
+                            type="radio"
+                            name="radio-2"
+                            class="radio radio-accent"
+                        />
                     </div>
                 </div>
             </div>
@@ -66,33 +113,81 @@ const title = "Scope Information"
                 <div class="flex justify-center gap-x-6">
                     <div class="flex align-middle gap-2">
                         <label for="input8">Less $100,000</label>
-                        <input id="input8" type="radio" name="radio-3" class="radio radio-accent" />
+                        <input
+                            id="input8"
+                            type="radio"
+                            name="radio-3"
+                            class="radio radio-accent"
+                        />
                     </div>
                     <div class="flex align-middle gap-2">
                         <label for="input9">$100,000 - $1.0M</label>
-                        <input id="input9" type="radio" name="radio-3" class="radio radio-accent" />
+                        <input
+                            id="input9"
+                            type="radio"
+                            name="radio-3"
+                            class="radio radio-accent"
+                        />
                     </div>
                     <div class="flex align-middle gap-2">
                         <label for="input10">$1.0M - $5.0M</label>
-                        <input id="input10" type="radio" name="radio-3" class="radio radio-accent" />
+                        <input
+                            id="input10"
+                            type="radio"
+                            name="radio-3"
+                            class="radio radio-accent"
+                        />
                     </div>
                     <div class="flex align-middle gap-2">
                         <label for="input11">More $5.0M</label>
-                        <input id="input11" type="radio" name="radio-3" class="radio radio-accent" />
+                        <input
+                            id="input11"
+                            type="radio"
+                            name="radio-3"
+                            class="radio radio-accent"
+                        />
                     </div>
                 </div>
             </div>
         </div>
-        
     </div>
 
     <div class="btn-group w-full flex pt-8 justify-around">
         <a href="/supplier" class="btn btn-outline px-12">
-            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" class="iconify iconify--material-symbols" width="32" height="32" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path fill="currentColor" d="m10.875 19.3l-6.6-6.6q-.15-.15-.213-.325Q4 12.2 4 12t.062-.375q.063-.175.213-.325l6.6-6.6q.275-.275.687-.288q.413-.012.713.288q.3.275.313.687q.012.413-.288.713L7.4 11h11.175q.425 0 .713.287q.287.288.287.713t-.287.712Q19 13 18.575 13H7.4l4.9 4.9q.275.275.288.7q.012.425-.288.7q-.275.3-.7.3q-.425 0-.725-.3Z"></path></svg>
+            <svg
+                xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink"
+                aria-hidden="true"
+                role="img"
+                class="iconify iconify--material-symbols"
+                width="32"
+                height="32"
+                preserveAspectRatio="xMidYMid meet"
+                viewBox="0 0 24 24"
+                ><path
+                    fill="currentColor"
+                    d="m10.875 19.3l-6.6-6.6q-.15-.15-.213-.325Q4 12.2 4 12t.062-.375q.063-.175.213-.325l6.6-6.6q.275-.275.687-.288q.413-.012.713.288q.3.275.313.687q.012.413-.288.713L7.4 11h11.175q.425 0 .713.287q.287.288.287.713t-.287.712Q19 13 18.575 13H7.4l4.9 4.9q.275.275.288.7q.012.425-.288.7q-.275.3-.7.3q-.425 0-.725-.3Z"
+                ></path>
+            </svg>
             Previous page
         </a>
-        <a href="/nomination" class="btn btn-outline">Reason for Nomination
-            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" class="iconify iconify--material-symbols" width="32" height="32" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path fill="currentColor" d="m14 18l-1.4-1.45L16.15 13H4v-2h12.15L12.6 7.45L14 6l6 6Z"></path></svg>
+        <a href="/nomination" class="btn btn-outline"
+            >Reason for Nomination
+            <svg
+                xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink"
+                aria-hidden="true"
+                role="img"
+                class="iconify iconify--material-symbols"
+                width="32"
+                height="32"
+                preserveAspectRatio="xMidYMid meet"
+                viewBox="0 0 24 24"
+                ><path
+                    fill="currentColor"
+                    d="m14 18l-1.4-1.45L16.15 13H4v-2h12.15L12.6 7.45L14 6l6 6Z"
+                ></path>
+            </svg>
         </a>
     </div>
     <div class="pt-12 hidden lg:block">

@@ -1,14 +1,14 @@
 ---
 import Logo from "./Logo.astro";
 import NavTitle from "./NavTitle.astro";
-import styles from '../sass/modules/_exports.module.scss'
+import styles from "../sass/modules/_exports.module.scss";
 
 interface Props {
-    subheading?: string
+    subheading?: string;
 }
 
-const { subheading = 'Supplier Nomination Form' } = Astro.props as Props
-const backgroundColor = styles.surgeBlue
+const { subheading = "Supplier Nomination Form" } = Astro.props as Props;
+const backgroundColor = styles.surgeBlue;
 ---
 
 <style define:vars={{ backgroundColor }}>
@@ -18,9 +18,11 @@ const backgroundColor = styles.surgeBlue
 </style>
 
 <nav>
-    <div class="navbar flex flex-row text-white text-justify justify-between py-3">
-            <Logo />
-            <NavTitle subheading={subheading}/>
-            <Logo />
+    <div
+        class="navbar flex flex-row text-white text-justify justify-between py-3"
+    >
+        <Logo />
+        <NavTitle subheading={subheading} />
+        <Logo />
     </div>
 </nav>

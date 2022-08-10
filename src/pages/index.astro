@@ -1,24 +1,24 @@
 ---
 import DefaultLayout from "../layouts/DefaultLayout.astro";
-import styles from '../sass/modules/_exports.module.scss'
+import styles from "../sass/modules/_exports.module.scss";
 
-const shadowColor = styles.surgeBlue
+const shadowColor = styles.surgeBlue;
 
-const pageTitle = 'Supplier Nomination Form'
+const pageTitle = "Supplier Nomination Form";
 ---
 
 <style define:vars={{ shadowColor }}>
-	.btn-outline:hover {
-		background-color: var(--shadowColor) ;
-	}
+    .btn-outline:hover {
+        background-color: var(--shadowColor);
+    }
 </style>
-	
 
 <DefaultLayout title={pageTitle} subheading="Home">
-	<h1 class="text-6xl pb-6 title-font">Supplier Nomination Form</h1>
-	<a href="/requestor" class="text-md flex items-center justify-center body-font btn btn-outline btn-wide p-0 ">
-		Get Started
-	</a>
-
+    <h1 class="text-6xl pb-6 title-font">Supplier Nomination Form</h1>
+    <a
+        href="/requestor"
+        class="text-md flex items-center justify-center body-font btn btn-outline btn-wide p-0"
+    >
+        Get Started
+    </a>
 </DefaultLayout>
-

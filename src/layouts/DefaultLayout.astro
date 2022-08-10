@@ -1,50 +1,61 @@
 ---
-import Nav from '../components/Nav.astro'
-import styles from '../sass/modules/_exports.module.scss'
-import '../sass/main.scss'
+import Nav from "../components/Nav.astro";
+import styles from "../sass/modules/_exports.module.scss";
+import "../sass/main.scss";
 
 interface Props {
-    title?: string
-	subheading?: string
+    title?: string;
+    subheading?: string;
 }
 
-const panelColor = styles.panelBackground
-const shadowColor = styles.surgeBlue
-const backgroundColor = styles.bodyBackground
-const {title = 'Home', subheading = 'Supplier Nomination Form'} = Astro.props as Props
+const panelColor = styles.panelBackground;
+const shadowColor = styles.surgeBlue;
+const backgroundColor = styles.bodyBackground;
+const { title = "Home", subheading = "Supplier Nomination Form" } =
+    Astro.props as Props;
 ---
 
-<style lang="scss" define:vars={{ shadowColor, 'panel-background': panelColor, backgroundColor  }}>
-	main {
-		background-color: var(--backgroundColor);
-	}
+<style
+    lang="scss"
+    define:vars={{
+        shadowColor,
+        "panel-background": panelColor,
+        backgroundColor,
+    }}
+>
+    main {
+        background-color: var(--backgroundColor);
+    }
 
-	#form__wrapper {
-		background-color: var(--panel-background);
+    #form__wrapper {
+        background-color: var(--panel-background);
 
-		--tw-shadow-color: var(--shadowColor); 
-		--tw-shadow: var(--tw-shadow-colored);
-		transition: box-shadow 0.3s ease-in-out;
-	}
+        --tw-shadow-color: var(--shadowColor);
+        --tw-shadow: var(--tw-shadow-colored);
+        transition: box-shadow 0.3s ease-in-out;
+    }
 </style>
 
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width" />
+<title>{title} | Surge Energy</title>
+<meta
+    name="description"
+    content="A newer Supplier Nomination Form powered by AstroJS and Surge Energy!"
+/>
 
-<!DOCTYPE html>
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width" />
-		<title>{title} | Surge Energy</title>
-		<meta name="description" content="A newer Supplier Nomination Form powered by AstroJS and Surge Energy!" />
-	</head>
-	<body>
-		<div class="w-full h-screen overflow-hidden">
-			<Nav subheading={subheading} />
-			<main class="w-full h-full overflow-hidden flex flex-row justify-center items-center">
-				<div id="form__wrapper" class="flex flex-col justify-center items-center h-3/4 w-11/12 md:w-2/3 rounded-3xl mb-24 hover:shadow-2xl border border-black md:border-opacity-0 md:hover:border-opacity-100 text-black text-center">
-					<slot />
-				</div>
-			</main>
-		</div>
-	</body>
-</html>
+<body>
+    <div class="w-full h-screen overflow-hidden">
+        <Nav subheading={subheading} />
+        <main
+            class="w-full h-full overflow-hidden flex flex-row justify-center items-center"
+        >
+            <div
+                id="form__wrapper"
+                class="flex flex-col justify-center items-center h-3/4 w-11/12 md:w-2/3 rounded-3xl mb-24 hover:shadow-2xl border border-black md:border-opacity-0 md:hover:border-opacity-100 text-black text-center"
+            >
+                <slot />
+            </div>
+        </main>
+    </div>
+</body>

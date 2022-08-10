@@ -1,4 +1,4 @@
-@use 'globals/fonts' as fonts;
+@use "globals/fonts" as fonts;
 
 .title-font {
     font-family: fonts.$title-font;

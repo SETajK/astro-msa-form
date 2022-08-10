@@ -1,5 +1,5 @@
 ---
-import '../assets/dual-listbox.css'
+import "../assets/dual-listbox.css";
 ---
 
 <select class="demo" multiple>
@@ -16,23 +16,24 @@ import '../assets/dual-listbox.css'
 </select>
 
 <script>
-    listbox = new DualListbox('.demo',{
-        addEvent: function(value) {
+    listbox = new DualListbox(".demo", {
+        addEvent: function (value) {
             console.log(value);
         },
-        removeEvent: function(value) {
+        removeEvent: function (value) {
             console.log(value);
         },
-        availableTitle: 'Different title',
-        selectedTitle: 'Different title',
-        addButtonText: '>',
-        removeButtonText: '<', addAllButtonText: '>>',
-        removeAllButtonText: '<<',
+        availableTitle: "Different title",
+        selectedTitle: "Different title",
+        addButtonText: ">",
+        removeButtonText: "<",
+        addAllButtonText: ">>",
+        removeAllButtonText: "<<",
         options: [
-            {text:"Option 1", value: "OPTION1"},
-            {text:"Option 2", value: "OPTION2"},
-            {text:"Selected option", value: "OPTION3", selected:true}
-        ]
-        });
+            { text: "Option 1", value: "OPTION1" },
+            { text: "Option 2", value: "OPTION2" },
+            { text: "Selected option", value: "OPTION3", selected: true },
+        ],
+    });
 </script>
 <script src="/dual-listbox.js" is:inline></script>

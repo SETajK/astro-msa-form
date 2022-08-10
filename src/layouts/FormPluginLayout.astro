@@ -1,11 +1,11 @@
 ---
 interface Props {
-    subheading?: string
+    subheading?: string;
 }
 
-const { subheading } = Astro.props as Props
+const { subheading } = Astro.props as Props;
 ---
 
 <div class="flex pb-8">
-    <h1 class="text-5xl subheading-font grow">{subheading}</h1>    
+    <h1 class="text-5xl subheading-font grow">{subheading}</h1>
 </div>

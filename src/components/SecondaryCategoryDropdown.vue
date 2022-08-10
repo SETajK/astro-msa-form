@@ -1,0 +1,108 @@
+<script setup lang="ts">
+import { ref } from "vue";
+import Multiselect from "vue-multiselect";
+
+let selected = ref(null);
+let options: string[] = [
+    "Bits, Scrapers, Hole Openers, Stabilizers",
+    "Casing Running Services & Torque Turn Services",
+    "Cementing Services ",
+    "Coil Tubing",
+    "Communication Equipment",
+    "Completion Fluids & Chemicals",
+    "Completion Tools - Packers, Frac Plugs, Bridge Plugs, Tools",
+    "Completions - Other Services",
+    "Compression",
+    "Consulting Services (Onsite) ",
+    "Contract Labor / Roustabout Services",
+    "Contract Labor Support - Downhole",
+    "Contract Labor Support - Surface",
+    "Coring and Core Analysis",
+    "Directional Drilling, MWD/LWD, Mud Motors",
+    "Drilling - Other Services",
+    "Drilling Chemicals",
+    "Earthwork - Pad & Road Construction",
+    "Electrical Construction - Powerlines, Substations, etc.",
+    "Electrical Materials & Equipment",
+    "Electrical Utility",
+    "Environmental Services - Spill Containment / Remediation",
+    "ESP Equipment & Services",
+    "Excavation - Boring",
+    "Excavation - Pipeline Construction",
+    "Excavation – Hydrovac",
+    "Expandable Casing & Services",
+    "Facilities Construction",
+    "Fishing Tools and Services & Whipstocks ",
+    "Fuel - Diesel, Propane and Lubricants",
+    "Geological and Seismic Acquisition & Processing",
+    "H2S Detection Equipment & SCBA / Air systems",
+    "Inspection",
+    "IT - Services / Hardware / Software",
+    "MRO / Valves / Flanges / Fittings",
+    "Mud Logging",
+    "Mud, Mud Chemicals & Mud Services",
+    "Nitrogen Pumping Services",
+    "OCTG - Casing / Tubing",
+    "OCTG - Casing Accessories & Float Equipment",
+    "OCTG - Coatings",
+    "OCTG - Line Pipe",
+    "OCTG - Sucker Rods",
+    "Office Administration",
+    "Office Maintenance",
+    "Office Supplies",
+    "Production - Other Services",
+    "Production Chemicals",
+    "Production Equipment - Instrumentation / Automation / SCADA",
+    "Production Equipment - Rods / Rod Pumps /Pumping Units",
+    "Production Equipment - Surface Pumps",
+    "Production Equipment - Tanks, Vessels, Flares, VRU's, etc.",
+    "Professional Services - Engineering",
+    "Professional Services - Surveying, Legal, etc.",
+    "Rentals - Accommodations",
+    "Rentals - Completions Equipment",
+    "Rentals - Cranes, Manlifts, Forklifts",
+    "Rentals - Drilling Tools",
+    "Rentals - Frac Tanks",
+    "Rentals - Frac Tree/ Frac Stacks/Frac Valves/ Frac String ",
+    "Rentals - Gensets",
+    "Rentals - Rig Equipment ",
+    "Rentals - Waste Disposal",
+    "Rig Moving",
+    "Rigs - Drilling",
+    "Rigs - Workover / Completion",
+    "Safety - Supplies Consulting",
+    "Salt Water Disposal (SWD)",
+    "SCADA / Instrumentation / Automation Services",
+    "Seismic Acquistion Processing",
+    "Solids Control",
+    "Stimulation - Well Fracturing, Acidizing",
+    "Trucking -  Fresh Water",
+    "Trucking - Freight / Hot Shot",
+    "Trucking - Waste / Produced Water",
+    "Trucking – Winch Trucks",
+    "Vehicle Maintenance",
+    "Waste Disposal",
+    "Water Purchases  / Treatment",
+    "Welding",
+    "Well Testing & Flowback",
+    "Wellhead Equipment & Services",
+    "Wireline Services - Cased Hole including Slickline",
+    "Wireline Services - Open Hole",
+];
+</script>
+
+<template>
+    <div>
+        <label class="text-xs">Secondary Category</label>
+        <Multiselect
+            placeholder="Secondary Category"
+            v-model="selected"
+            :options="options"
+            :searchable="true"
+            :hide-selected="false"
+            :allowEmpty="false"
+        ></Multiselect>
+    </div>
+</template>
+
+<style src="vue-multiselect/dist/vue-multiselect.min.css"></style>

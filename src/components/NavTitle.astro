@@ -1,11 +1,12 @@
 ---
 interface Props {
-    subheading?: string
+    subheading?: string;
 }
 
-const { subheading = 'Supplier Nomination Form' } = Astro.props as Props
+const { subheading = "Supplier Nomination Form" } = Astro.props as Props;
 
-const href = "https://surgeenergya.sharepoint.com/sites/Surge/Departments/Supply%20Chain"
+const href =
+    "https://surgeenergya.sharepoint.com/sites/Surge/Departments/Supply%20Chain";
 ---
 
 <style>
@@ -19,9 +20,10 @@ const href = "https://surgeenergya.sharepoint.com/sites/Surge/Departments/Supply
     <a
         href={href}
         class="btn btn-ghost normal-case w-full text-3xl"
-    target="_blank"
-    >Supply Chain SharePoint</a>
+        target="_blank"
+        >Supply Chain SharePoint
+    </a>
     <h1 class="text-xl font-thin hidden md:block">
-        { subheading }
+        {subheading}
     </h1>
 </div>
